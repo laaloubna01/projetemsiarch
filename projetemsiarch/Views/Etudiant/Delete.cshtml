@@ -1,0 +1,18 @@
+﻿@model projetemsiarch.Models.Etudiant
+
+@{
+    ViewData["Title"] = "Supprimer un étudiant";
+}
+
+<h2 class="text-center text-danger">@ViewData["Title"]</h2>
+
+<p>Êtes-vous sûr de vouloir supprimer l'étudiant <strong>@Model.Nom @Model.Prenom</strong> ?</p>
+
+<form asp-action="Delete" method="post">
+    <input asp-for="Id" value="@Model.Id" hidden />
+
+    <div class="form-group mt-3 d-flex justify-content-between">
+        <button type="submit" class="btn btn-danger">Oui, Supprimer</button>
+        <a href="@Url.Action("Index", "Etudiant")" class="btn btn-secondary">Annuler</a>
+    </div>
+</form>

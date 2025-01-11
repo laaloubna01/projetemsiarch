@@ -1,0 +1,16 @@
+﻿@model projetemsiarch.Models.Filiere
+
+@{
+    ViewData["Title"] = "Create New Filiere";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="Nom">Nom</label>
+        <input type="text" class="form-control" id="Nom" name="Nom" />
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="@Url.Action("Index", "Filiere")" class="btn btn-secondary">Cancel</a>
+</form>

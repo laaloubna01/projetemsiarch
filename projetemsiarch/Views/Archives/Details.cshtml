@@ -1,0 +1,27 @@
+﻿@model projetemsiarch.Models.Archive
+@{
+    ViewData["Title"] = "Détails de l'Archive";
+}
+
+<h1>Détails de l'Archive</h1>
+
+<table class="table">
+    <tr>
+        <th>Nom</th>
+        <td>@Model.Nom</td>
+    </tr>
+    <tr>
+        <th>Type</th>
+        <td>@Model.Type</td>
+    </tr>
+    <tr>
+        <th>URL</th>
+        <td>@Model.Url</td>
+    </tr>
+    <tr>
+        <th>Module</th>
+        <td>@Model.Module.Nom</td>
+    </tr>
+</table>
+
+<a class="btn btn-primary" asp-action="Index" asp-route-moduleId="@Model.ModuleId">Retour à la liste</a>

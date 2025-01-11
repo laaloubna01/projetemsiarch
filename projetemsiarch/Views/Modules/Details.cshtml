@@ -1,0 +1,27 @@
+﻿@model IEnumerable<projetemsiarch.Models.Module>
+
+@{
+    ViewData["Title"] = "Liste des Modules";
+}
+
+<h1>Liste des Modules</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var module in Model)
+        {
+            <tr>
+                <td>@module.Nom</td>
+                <td>
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@module.Id">Voir Archives</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

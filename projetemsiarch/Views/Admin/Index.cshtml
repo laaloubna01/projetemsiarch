@@ -1,0 +1,39 @@
+﻿@model IEnumerable<projetemsiarch.Models.Filiere>
+
+@{
+    ViewData["Title"] = "Liste des Filières";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+@if (Model.Any())  
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var filiere in Model)
+            {
+                <tr>
+                    <td>@filiere.Id</td>
+                    <td>@filiere.Nom</td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Filiere", new { id = filiere.Id })" class="btn btn-warning">Edit</a>
+                        <a href="@Url.Action("Delete", "Filiere", new { id = filiere.Id })" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="@Url.Action("Create", "Filiere")" class="btn btn-success">Add New Filiere</a>
+}
+else
+{
+    <p>Aucune filière disponible.</p>
+}

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<projetemsiarch.Models.Etudiant>
+
+@{
+    ViewData["Title"] = "Liste des Étudiants";
+}
+
+<partial name="_Notifications" />
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-12 text-center">
+            <h2 class="text-dark">@ViewData["Title"]</h2>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-12 text-end">
+            <a href="@Url.Action("Create", "Etudiant")" class="btn btn-dark">
+                <i class="bi bi-plus-circle"></i> Ajouter un nouvel étudiant
+            </a>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var etudiant in Model)
+            {
+                <tr>
+                    <td>@etudiant.Nom</td>
+                    <td>@etudiant.Prenom</td>
+                    <td>@etudiant.Email</td>
+                    <td>
+                        <div class="btn-group" role="group">
+                            <a href="@Url.Action("Edit", "Etudiant", new { id = etudiant.Id })" class="btn btn-warning mx-2">
+                                <i class="bi bi-pencil"></i> Modifier
+                            </a>
+                            <a href="@Url.Action("Delete", "Etudiant", new { id = etudiant.Id })" class="btn btn-danger mx-2">
+                                <i class="bi bi-trash"></i> Supprimer
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

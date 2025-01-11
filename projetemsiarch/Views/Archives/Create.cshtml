@@ -1,0 +1,37 @@
+﻿@model projetemsiarch.Models.Archive
+
+<div class="container">
+    <h2>Créer une Archive</h2>
+    
+        <form method="post" asp-action="Create">
+            <input type="hidden" asp-for="ArchiveId" />
+        <!-- Champ caché pour l'ArchiveId si nécessaire, sinon vous pouvez l'ignorer -->
+        
+
+        <!-- Champ Nom -->
+        <div class="mb-3">
+            <label asp-for="Nom" class="form-label">Nom</label>
+            <input asp-for="Nom" class="form-control" required />
+            <span asp-validation-for="Nom" class="text-danger"></span>
+        </div>
+
+        <!-- Champ Type -->
+        <div class="mb-3">
+            <label asp-for="Type" class="form-label">Type</label>
+            <input asp-for="Type" class="form-control" required />
+            <span asp-validation-for="Type" class="text-danger"></span>
+        </div>
+
+        <!-- Champ URL -->
+        <div class="mb-3">
+            <label asp-for="Url" class="form-label">URL</label>
+            <input asp-for="Url" class="form-control" required />
+            <span asp-validation-for="Url" class="text-danger"></span>
+        </div>
+
+        <!-- Bouton de soumission pour créer l'archive -->
+        <button type="submit" class="btn btn-primary">Créer</button>
+        <!-- Lien retour à la liste -->
+        <a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+    </form>
+</div>

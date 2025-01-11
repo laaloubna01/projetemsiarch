@@ -1,0 +1,19 @@
+﻿@model projetemsiarch.Models.Semestre
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>@Model.Nom</h1>
+
+<h2>Modules :</h2>
+<ul>
+    @foreach (var module in Model.Modules)
+    {
+        <li>
+            <a asp-action="Details" asp-controller="Modules" asp-route-id="@module.Id">
+                @module.Nom
+            </a>
+        </li>
+    }
+</ul>

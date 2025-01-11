@@ -1,0 +1,48 @@
+﻿@model List<projetemsiarch.Models.Archive>
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Liste des Archives
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Créer une nouvelle Archive
+            </a>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Type</th>
+                <th>URL</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>@obj.Nom</td>
+                    <td>@obj.Type</td>
+                    <td>@obj.Url</td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-action="Edit" asp-route-id="@obj.ArchiveId" class="btn btn-primary mx-2">
+                                <i class="bi bi-pencil-square"></i> Modifier
+                            </a>
+
+                            <a asp-action="Delete" asp-route-id="@obj.ArchiveId" class="btn btn-danger mx-2">
+                                <i class="bi bi-trash"></i> Supprimer
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

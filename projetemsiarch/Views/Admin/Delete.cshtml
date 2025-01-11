@@ -1,0 +1,14 @@
+﻿@model projetemsiarch.Models.Filiere
+
+@{
+    ViewData["Title"] = "Delete Filiere";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Are you sure you want to delete the Filiere <strong>@Model.Nom</strong>?</p>
+
+<form asp-action="Delete" method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="@Url.Action("Index", "Filiere")" class="btn btn-secondary">Cancel</a>
+</form>

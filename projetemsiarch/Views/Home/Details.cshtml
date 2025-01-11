@@ -1,0 +1,13 @@
+﻿@model projetemsiarch.Models.Filiere
+
+<h1>@Model.Nom</h1>
+<div class="semestre-list">
+    @foreach (var semestre in Model.Semestres)
+    {
+            <div class="semestre-item">
+                <a href="@Url.Action("Details", "Semestres", new { id = semestre.Id })">
+                    <h2>@semestre.Nom</h2>
+                </a>
+            </div>
+    }
+</div>

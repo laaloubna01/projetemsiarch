@@ -1,0 +1,13 @@
+@model projetemsiarch.Models.Semestre
+
+<h1>@Model.NomSemestre</h1>
+<div class="module-list">
+    @foreach (var module in Model.Modules)
+    {
+        <div class="module-item">
+            <a href="@Url.Action("Details", "Modules", new { id = module.ModuleId })">
+                <h3>@module.NomModule</h3>
+            </a>
+        </div>
+    }
+</div>

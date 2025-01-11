@@ -1,0 +1,26 @@
+﻿@model projetemsiarch.Models.Archive
+
+<div class="container">
+    <h2 class="text-danger">Supprimer une Archive</h2>
+    <form method="post">
+        <input type="hidden" asp-for="ArchiveId" />
+
+        <div class="mb-3">
+            <label asp-for="Nom" class="form-label">Nom</label>
+            <input asp-for="Nom" class="form-control" disabled />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Type" class="form-label">Type</label>
+            <input asp-for="Type" class="form-control" disabled />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Url" class="form-label">URL</label>
+            <input asp-for="Url" class="form-control" disabled />
+        </div>
+
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+        <a asp-action="Index" class="btn btn-secondary">Retour à la liste</a>
+    </form>
+</div>

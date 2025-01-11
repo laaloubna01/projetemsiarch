@@ -1,0 +1,22 @@
+﻿@model projetemsiarch.Models.Filiere
+
+@{
+    Layout = "_Layout";
+}
+
+<h1>@Model.Nom</h1>
+<p>@Model.Description</p>
+
+<h2>Semestres :</h2>
+<div class="semestre-list">
+    @foreach (var semestre in Model.Semestres)
+    {
+        <div class="semestre-item">
+            <h3>
+                <a asp-controller="Semestres" asp-action="Details" asp-route-id="@semestre.Id">
+                    @semestre.Nom
+                </a>
+            </h3>
+        </div>
+    }
+</div>
